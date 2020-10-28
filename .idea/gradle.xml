@@ -12,6 +12,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/news" />
+            <option value="$PROJECT_DIR$/tpcalculator" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

@@ -11,7 +11,7 @@ import com.bumptech.glide.Glide
 import com.mbds.news.R
 import com.mbds.news.model.Article
 
-class  ArticleAdapter(private val dataset: MutableList<Article>) :
+class  ArticleAdapter(private val dataset: List<Article>) :
     RecyclerView.Adapter<ArticleAdapter.ViewHolder>() {
 
     class ViewHolder(val root: View) : RecyclerView.ViewHolder(root) {

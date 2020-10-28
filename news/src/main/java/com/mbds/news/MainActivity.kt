@@ -3,10 +3,7 @@ package com.mbds.news
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.mbds.news.fragments.ArticlesFragmentEconomy
-import com.mbds.news.fragments.ArticlesFragmentNews
-import com.mbds.news.fragments.ArticlesFragmentSport
-import com.mbds.news.fragments.CategoriesFragement
+import com.mbds.news.fragments.*
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,9 +17,9 @@ class MainActivity : AppCompatActivity() {
             value = ChoiceCategorie.getString("key").toString()
 
            when (value) {
-               "Sport"-> { changeFragment(ArticlesFragmentSport()) }
+               "Sports"-> { changeFragment(ArticlesFragmentSport()) }
                "Economy"-> { changeFragment(ArticlesFragmentEconomy()) }
-               "Politique"-> { changeFragment(ArticlesFragmentSport()) }
+               "Politics"-> { changeFragment(ArticlesFragmentPolitique()) }
                "News"-> { changeFragment(ArticlesFragmentNews()) }
            }
         }else {changeFragment(CategoriesFragement())}

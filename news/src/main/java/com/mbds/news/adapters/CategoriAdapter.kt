@@ -35,8 +35,8 @@ class  CategoriAdapter(private val dataset: List<Category>) :
 
                 when(txtname.text){
 
-                    "Sport"-> {
-                        b.putString("key", "Sport")//Your id
+                    "Sports"-> {
+                        b.putString("key", "Sports")//Your id
                         intent.putExtras(b)//Put your id to your next Intent
                         imageView.context.startActivity(intent)
                               }
@@ -47,8 +47,8 @@ class  CategoriAdapter(private val dataset: List<Category>) :
                         imageView.context.startActivity(intent)
                                }
 
-                    "Politique"-> {
-                        b.putString("key", "Politique")//Your id
+                    "Politics"-> {
+                        b.putString("key", "Politics")//Your id
                         intent.putExtras(b)//Put your id to your next Intent
                         imageView.context.startActivity(intent)
                     }

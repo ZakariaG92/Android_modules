@@ -27,7 +27,6 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class ArticlesFragmentNews : Fragment() {
-    var art: String? = null
     private val repository = ArticleRpository()
 
 
@@ -55,18 +54,11 @@ class ArticlesFragmentNews : Fragment() {
 
     private suspend fun getData(view: View) {
         withContext(Dispatchers.IO) {
-            val result = repository.list()
-            val news = mutableListOf<Article>()
-
-            for (i in 0..(result?.articles?.size?.minus(1!!)!! )) {
-
-                when(result?.articles.get(i).source?.name){
-                    "Mediapart","Google News","Le Parisien","Le Monde","L'Indépendant","Libération","BFMTV","20 Minutes","Normandie Actu"-> { news.add(result?.articles.get(i))!!}
-                }
-            }
+            val result = repository.listNews()
 
 
-            bindData(news,view)
+
+            bindData(result!!.articles,view)
 
 
 
@@ -74,20 +66,16 @@ class ArticlesFragmentNews : Fragment() {
         }
     }
     //S'execute sur le thread principal
-    private suspend fun bindData(result: MutableList<Article>, view: View) {
+    private suspend fun bindData(result: List<Article>, view: View) {
         withContext(Dispatchers.Main) {
 
 
             val recyclerView: RecyclerView = view.findViewById(R.id.recycler_articles)
 
-            val adapterRecycler= result?.let { ArticleAdapter(it) }
+            val adapterRecycler=ArticleAdapter(result)
             recyclerView.hasFixedSize()
             recyclerView.layoutManager = LinearLayoutManager(view.context)
             recyclerView.adapter = adapterRecycler
-
-
-
-
 
 
         }

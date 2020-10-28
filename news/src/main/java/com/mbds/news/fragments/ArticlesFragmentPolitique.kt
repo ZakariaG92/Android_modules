@@ -26,8 +26,7 @@ private const val ARG_PARAM2 = "param2"
  * Use the [ArticlesFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class ArticlesFragmentSport : Fragment() {
-
+class ArticlesFragmentPolitique : Fragment() {
     private val repository = ArticleRpository()
 
 
@@ -55,7 +54,7 @@ class ArticlesFragmentSport : Fragment() {
 
     private suspend fun getData(view: View) {
         withContext(Dispatchers.IO) {
-            val result = repository.listSport()
+            val result = repository.listPolitique()
 
 
 

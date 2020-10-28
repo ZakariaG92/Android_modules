@@ -17,18 +17,6 @@ class ArticleRpository {
     init {
 
 
-//        // Add API KEY to Authorization
-//        val clientBulider = OkHttpClient.Builder()
-//            .addInterceptor(AuthenticationInterceptor())
-//
-//        // Enable Logger
-//        val interceptor = HttpLoggingInterceptor()
-//        interceptor.level = HttpLoggingInterceptor.Level.BODY
-//        clientBulider.addInterceptor(interceptor)
-
-
-        //Build Client
-//        val client = clientBulider.build()
 
         val logging = HttpLoggingInterceptor()
         logging.level = HttpLoggingInterceptor.Level.BODY
@@ -45,26 +33,25 @@ class ArticleRpository {
     }
 
 
-//    class AuthenticationInterceptor: Interceptor {
-//        override fun intercept(chain: Interceptor.Chain): Response {
-//            var request = chain.request()
-//            val headers = request
-//                .headers()
-//                .newBuilder()
-//                .add("Authorization", "Bearer fbab359f05f040b7aa7e2bcb7925d3ac")
-//                .build()
-//
-//            request = request
-//                .newBuilder()
-//                .headers(headers)
-//                .build()
-//            return chain.proceed(request)
-//        }
-//
-//    }
 
-    fun list(): ArticleResponse? {
-        val response = service.list().execute()
+
+    fun listSport(): ArticleResponse? {
+        val response = service.listSport().execute()
+        return response.body() ?: null
+    }
+
+    fun listEconomy(): ArticleResponse? {
+        val response = service.listEconomy().execute()
+        return response.body() ?: null
+    }
+
+    fun listNews(): ArticleResponse? {
+        val response = service.listNews().execute()
+        return response.body() ?: null
+    }
+
+    fun listPolitique(): ArticleResponse? {
+        val response = service.listPolitique().execute()
         return response.body() ?: null
     }
 }
