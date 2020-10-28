@@ -43,7 +43,7 @@ fun MainActivity.changeFragment(fragment: Fragment) {
         //3) on remplace le contenu du container
         replace(R.id.fragment_container, fragment)
         //4) on ajoute la transaction dans la backstack
-        addToBackStack(null)
+       // addToBackStack(null)
     }.commit()
     // 5) on commit la transaction
 }
